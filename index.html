@@ -70,6 +70,69 @@
       background-color: #f3f4f6;
       color: #6b7280;
     }
+    .comparison-table {
+      width: 100%;
+      margin: 2rem auto;
+      border-collapse: collapse;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      border-radius: 1rem;
+      overflow: hidden;
+      max-width: 800px;
+    }
+    .comparison-table th, .comparison-table td {
+      padding: 1rem;
+      text-align: center;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .comparison-table th {
+      background-color: #f3f4f6;
+      font-weight: 600;
+      color: #374151;
+    }
+    .comparison-table td:first-child {
+      text-align: left;
+      font-weight: 600;
+      color: #1f2937;
+    }
+    .comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+    .comparison-table .check {
+      color: #22c55e;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+    .comparison-table .cross {
+      color: #ef4444;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+    .video-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+      overflow: hidden;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    @media (max-width: 480px) {
+      .video-container {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -101,6 +164,51 @@
 
   </section>
 
+  <section>
+    <h2 style="text-align:center;">同業比較</h2>
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>功能</th>
+          <th>SinkroTrade</th>
+          <th>Replikanto</th>
+          <th>Tradesyncer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        <td>多個Propfirm</td>
+            <td class="check">✓</td>
+            <td class="check">✓</td>
+            <td class="check">✓</td>
+        </tr>
+        <tr>
+            <td>網頁下單</td>
+            <td class="check">✓</td>
+            <td class="cross">✗</td>
+            <td class="check">✓</td>
+          </tr>
+        <tr>
+          <td>本機送單<br/>(IP 不衝突)</td>
+          <td class="check">✓</td>
+          <td class="check">✓</td>
+          <td class="cross">✗</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2 style="text-align:center;">影片介紹</h2>
+    <div class="video-container">
+      <div class="video-wrapper">
+        <iframe src="https://youtu.be/XVc0orcpHd4" title="帳號匯入教學" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-wrapper">
+        <iframe src="https://youtu.be/sWEanNQI04w" title="複製交易教學" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
   <section>
     <h2 style="text-align:center;">價格方案</h2>
     <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; margin-top: 2rem;">
